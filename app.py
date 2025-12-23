@@ -1,7 +1,8 @@
 import streamlit as st
 import joblib
+import random
 
-model = joblib.load('knnmodel.joblib')
+#model = joblib.load('knnmodel.joblib')
 
 st.title('Iris Classification Project')
 st.text('This is a project developed by Jayanth')
@@ -12,10 +13,11 @@ pl = st.number_input("Enter the petal length: ")
 pw = st.number_input("Enter the petal width: ")
 
 if st.button('Predict Flower'):
-    prediction = model.predict([[sl,sw,pl,pw]])
+    prediction = random.randint(0,2)
     if prediction==0:
         st.write('Flower 1')
     elif prediction==1:
         st.write('Flower 2')
     else:
+
         st.write('Flower 3')
